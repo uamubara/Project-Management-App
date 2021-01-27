@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   # PUT projects/1/tasks/1
   def update
     if @task.update_attributes(task_params)
-      redirect_to([@task.project, @task], notice: 'Task was successfully updated.')
+      redirect_to(@task.project)
     else
       render action: 'edit'
     end
